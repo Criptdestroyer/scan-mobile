@@ -6,7 +6,7 @@
  * @flow
  */
 import React, { Component } from 'react';
-
+import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 import {
   AppRegistry,
   StyleSheet,
@@ -19,10 +19,11 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 
 export default class App extends Component<Props> {
   onSuccess(e) {
-    // Linking
-    //   .openURL(e.data)
+    Linking
+      .openURL(e.data)
+      .catch(err => alert(e.data));
     //   .catch(err => console.error('An error occured', err));
-    alert(e.data);
+    
   }
 
   render() {
@@ -31,7 +32,7 @@ export default class App extends Component<Props> {
         onRead={this.onSuccess.bind(this)}
         topContent={
           <Text style={styles.centerText}>
-            Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on your computer and scan the QR code.
+            Welcome to <Text style={styles.textBold}>E-ticketing Emir</Text> scan your barcode in here.
           </Text>
         }
         bottomContent={
@@ -40,6 +41,22 @@ export default class App extends Component<Props> {
           </TouchableOpacity>
         }
       />
+      // <Container>
+      //   <Header />
+      //   <Content>
+      //     <Form>
+      //       <Item floatingLabel>
+      //         <Label>Username</Label>
+      //         <Input />
+      //       </Item>
+      //       <Item floatingLabel last>
+      //         <Label>Password</Label>
+      //         <Input />
+      //       </Item>
+      //     </Form>
+      //   </Content>
+      // </Container>
+
     );
   }
 }
