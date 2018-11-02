@@ -15,17 +15,8 @@ const App = StackNavigator(
 	{
 		Gateway: { screen: Gateway },
 		Home: { screen: Home },
-		// WorkshopList: { screen: WorkshopList },
-		// WorkshopDetail: { screen: WorkshopDetail },
-		// IntensiveClassList: { screen: IntensiveClassList },
-		// IntensiveClassDetail: { screen: IntensiveClassDetail },
-		// WeekendClassList: { screen: WeekendClassList },
-		// WeekendClassDetail: { screen: WeekendClassDetail },
 		QrCodeScanner: { screen: QrCodeScanner },
 		// ProductScanner: { screen: ProductScanner },
-		// Store: { screen: Store },
-		// ProductList: { screen: ProductList },
-		// ProductDetail: { screen: ProductDetail }
 	},
 	{
 		initialRouteName: 'Home'

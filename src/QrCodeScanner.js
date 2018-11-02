@@ -1,8 +1,10 @@
+'use strict';
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View,TouchableOpacity } from 'react-native';
 import { Container, Text } from 'native-base';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import Toolbar from './components/Toolbar';
+import { createStackNavigator } from 'react-navigation';
 
 export default class QrCodeScanner extends Component{
     static navigationOption = ({navigation})=>{
@@ -17,6 +19,7 @@ export default class QrCodeScanner extends Component{
         };
     }
 
+
     render(){
         return (
 			<QRCodeScanner
@@ -28,9 +31,10 @@ export default class QrCodeScanner extends Component{
 					<Text style={{ textAlign: 'center' }}>{this.state.qrcode}</Text>
 				}
 				bottomContent={
-					<View style={{ paddingHorizontal: 12 }}>
-						<Text style={styles.buttonText} note>Pindai QR Code pada voucher yang tersedia untuk melakukan Top Up</Text>
-					</View>
+					<TouchableOpacity style={styles.buttonTouchable}
+					onPress={()=>this.props.navigation.navigate('Information')}>
+					<Text style={styles.buttonText}>OK. Got it!</Text>
+				  </TouchableOpacity>
 				}/>
 		);
     }
