@@ -6,77 +6,41 @@
  * @flow
  */
 import React, { Component } from 'react';
-import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
-import {  Title,  Footer, FooterTab, Button, Left, Right, Body, Icon} from 'native-base';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  Linking,
-  View,
-  StatusBar
-} from 'react-native';
-import QRCodeScanner from 'react-native-qrcode-scanner';
 import Routes from './src/Routes';
+import { StackNavigator } from 'react-navigation';
+import Gateway from './src/Gateway';
+import Home from './src/Home';
+import QrCodeScanner from './src/QrCodeScanner';
+const App = StackNavigator(
+	{
+		Gateway: { screen: Gateway },
+		Home: { screen: Home },
+		// WorkshopList: { screen: WorkshopList },
+		// WorkshopDetail: { screen: WorkshopDetail },
+		// IntensiveClassList: { screen: IntensiveClassList },
+		// IntensiveClassDetail: { screen: IntensiveClassDetail },
+		// WeekendClassList: { screen: WeekendClassList },
+		// WeekendClassDetail: { screen: WeekendClassDetail },
+		QrCodeScanner: { screen: QrCodeScanner },
+		// ProductScanner: { screen: ProductScanner },
+		// Store: { screen: Store },
+		// ProductList: { screen: ProductList },
+		// ProductDetail: { screen: ProductDetail }
+	},
+	{
+		initialRouteName: 'Home'
+	}
+);
 
+export default App;
 
-export default class App extends Component<Props> {
-  // onSuccess(e) {
-  //   Linking
-  //     .openURL(e.data)
-  //     .catch(err => alert(e.data));
-  //   //   .catch(err => console.error('An error occured', err));
-    
-  // }
-
-  render() {
-    return (
-      <View style={styles.container}>
-      <StatusBar backgroundColor="#1c313a" barStyle="light-content"/>
-      <Routes/>
-      </View>
-      // <QRCodeScanner
-      //   onRead={this.onSuccess.bind(this)}
-      //   topContent={
-      //     <Text style={styles.centerText}>
-      //       Welcome to <Text style={styles.textBold}>E-ticketing Emir</Text> scan your barcode in here.
-      //     </Text>
-      //   }
-      //   bottomContent={
-      //     <TouchableOpacity style={styles.buttonTouchable}>
-      //       <Text style={styles.buttonText}>OK. Got it!</Text>
-      //     </TouchableOpacity>
-      //   }
-      // />
-     
-      
-
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  centerText: {
-    flex: 1,
-    fontSize: 18,
-    padding: 32,
-    color: '#777',
-  },
-  textBold: {
-    fontWeight: '500',
-    color: '#000',
-  },
-  buttonText: {
-    fontSize: 21,
-    color: 'rgb(0,122,255)',
-  },
-  buttonTouchable: {
-    padding: 16,
-  },
-  container : {
-
-    flex: 1,
-    
-    }
-});
+// export default class App extends Component<Props> {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//       <StatusBar backgroundColor="#1c313a" barStyle="light-content"/>
+//       <Routes/>
+//       </View>
+//     );
+//   }
+// }
