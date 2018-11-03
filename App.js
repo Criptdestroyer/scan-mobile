@@ -11,11 +11,13 @@ import { StackNavigator } from 'react-navigation';
 import Gateway from './src/Gateway';
 import Home from './src/Home';
 import QrCodeScanner from './src/QrCodeScanner';
+import Information from './src/Information';
 const App = StackNavigator(
 	{
 		Gateway: { screen: Gateway },
 		Home: { screen: Home },
 		QrCodeScanner: { screen: QrCodeScanner },
+		Information: {screen: Information}
 		// ProductScanner: { screen: ProductScanner },
 	},
 	{
