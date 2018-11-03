@@ -35,12 +35,12 @@ export default class QrCodeScanner extends Component{
 				}/>
 		);
     }
-    onSuccess = e => {
-		
+    onSuccess (e){
 		console.log(e);
 		this.setState({ qrcode: e.data });
-		()=>this.props.navigation.navigate('Information');
-    };
+		let item = { image: 'https://sydemy.com/home/../admission/admin/slider_banner/images/slider_IC.jpg' }; 
+		this.props.navigation.navigate('Information',{item});
+    }
      // onSuccess(e) {
   //   Linking
   //     .openURL(e.data)
