@@ -9,9 +9,8 @@ TouchableOpacity
 
 import Logo from '../components/Logo';
 import Form from '../components/Form';
-import {Actions} from 'react-native-router-flux';
 
-export default class Login extends Component<{}> {
+export default class Login extends Component {
 
 signup() {
     Actions.signup()
@@ -21,11 +20,11 @@ render() {
     return(
     <View style={styles.container}>
     <Logo/>
-        <Form type="Login"/>
-        <View style={styles.signupTextCont}>
+        <Form type="Login" navigation={this.props.navigation}/>
+        {/* <View style={styles.signupTextCont}>
             <Text style={styles.signupText}>Dont have an account yet?</Text>
             <TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
-        </View>
+        </View> */}
     </View>
     )
 }

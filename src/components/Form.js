@@ -6,8 +6,9 @@ import {
     TextInput,
     TouchableOpacity
     } from 'react-native';
+    import { StackNavigator } from 'react-navigation';
     
-export default class Logo extends Component<{}> {
+export default class Form extends Component {
 render(){
     return(
         <View style={styles.container}>
@@ -29,7 +30,7 @@ render(){
         ref={(input) => this.password = input}
         />
         
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={()=>this.props.navigation.navigate('Home')}>
         <Text style={styles.buttonText}>{this.props.type}</Text>
         </TouchableOpacity>
         
