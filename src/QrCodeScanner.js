@@ -6,6 +6,15 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import Toolbar from './components/Toolbar';
 import { StackNavigator } from 'react-navigation';
 
+import * as ax from 'axios';
+import qs from 'qs';
+import API_URL from './config';
+
+const axios = ax.create({
+	baseURL: API_URL,
+	headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+});
+
 export default class QrCodeScanner extends Component{
     static navigationOption = ({navigation})=>{
         return{
@@ -36,10 +45,28 @@ export default class QrCodeScanner extends Component{
 		);
     }
     onSuccess (e){
-		console.log(e);
-		this.setState({ qrcode: e.data });
-		let item = { image: 'https://sydemy.com/home/../admission/admin/slider_banner/images/slider_IC.jpg' }; 
-		this.props.navigation.navigate('Information',{item});
+		this.setState({ qrcode: e.data }, () => {
+			axios({
+				method: 'POST',
+				url: '/customers/check-qrcode',
+				data: qs.stringify({
+					qrcode: e.data
+				})
+			})
+			.then(response => {
+				const status = response.data.status;
+				const data = response.data.data;
+				if (status ===  'success') {
+					let item = { image: 'https://sydemy.com/home/../admission/admin/slider_banner/images/slider_IC.jpg', ...data }; 
+					this.props.navigation.navigate('Information',{item});
+				} else {
+					console.log(data);
+				}
+			})
+			.catch(error => {
+				console.log(error);
+			});
+		});
     }
      // onSuccess(e) {
   //   Linking

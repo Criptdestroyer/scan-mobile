@@ -46,7 +46,7 @@ export default class Information extends Component{
 	    					<Text>Nama</Text>
 	    				</View>
 	    				<View style={{ flex: 2 }}>
-	    					<Text style={{ fontSize: 15, color: 'rgba(0, 0, 0, 0.8)' }}>Ahmad Emir Alfatah</Text>
+	    					<Text style={{ fontSize: 15, color: 'rgba(0, 0, 0, 0.8)' }}>{ this.item.name }</Text>
 	    				</View>
 	    			</View>
 	    			<View style={{ width: '100%', flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: 10, paddingVertical: 5, borderTopWidth: 1, borderTopColor: 'rgba(0, 0, 0, 0.7)' }}>
@@ -54,7 +54,7 @@ export default class Information extends Component{
 	    					<Text>Jenis Tiket</Text>
 	    				</View>
 	    				<View style={{ flex: 2 }}>
-	    					<Text style={{ fontSize: 15, color: 'rgba(0, 0, 0, 0.8)' }}>VIP</Text>
+	    					<Text style={{ fontSize: 15, color: 'rgba(0, 0, 0, 0.8)' }}>-</Text>
 	    				</View>
 	    			</View>
 	    			<View style={{ width: '100%', flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: 10, paddingVertical: 5, borderTopWidth: 1, borderTopColor: 'rgba(0, 0, 0, 0.7)' }}>
@@ -62,7 +62,7 @@ export default class Information extends Component{
 	    					<Text>Email</Text>
 	    				</View>
 	    				<View style={{ flex: 2 }}>
-	    					<Text style={{ color: 'rgba(0, 0, 0, 0.8)' }}>ahmademir1201@gmail.com</Text>
+	    					<Text style={{ color: 'rgba(0, 0, 0, 0.8)' }}>{ this.item.email }</Text>
 	    				</View>
 	    			</View>
 	    			<View style={{ width: '100%', flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: 10, paddingVertical: 5, borderTopWidth: 1, borderTopColor: 'rgba(0, 0, 0, 0.7)', borderBottomWidth: 1, borderBottomColor: 'rgba(0, 0, 0, 0.7)' }}>
@@ -70,7 +70,7 @@ export default class Information extends Component{
 	    					<Text>Status</Text>
 	    				</View>
 	    				<View style={{ flex: 2 }}>
-	    					<Text style={{ color: 'rgba(0, 0, 0, 0.8)' }}>Verified</Text>
+	    					<Text style={{ color: 'rgba(0, 0, 0, 0.8)' }}>{ this.item.status }</Text>
 	    				</View>
 	    			</View>
 	    			<View style={{ width: '100%', paddingVertical: 20 }}>
