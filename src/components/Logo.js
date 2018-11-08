@@ -7,12 +7,12 @@ View,
 Image
 } from 'react-native';
 
-export default class Logo extends Component<{}> {
+export default class Logo extends Component {
 render(){
     return(
     <View style={styles.container}>
         <Image  style={{width:40, height: 70}} source={require('../images/logo.png')}/>
-        <Text style={styles.logoText}>Welcome to My app.</Text>
+        <Text style={styles.logoText}>Welcome to E-Ticketing.</Text>
     </View>
     )
 }

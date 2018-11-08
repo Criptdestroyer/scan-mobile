@@ -44,7 +44,7 @@ export default class Home extends Component {
     			
     			data.map(x => {
     				x.image = 'https://sydemy.com/home/../admission/admin/slider_banner/images/slider_IC.jpg';
-    				x.navigateTo = '#';
+    				x.navigateTo = 'QrCodeScanner';
     				return x;
     			});
 

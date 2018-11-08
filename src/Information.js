@@ -32,8 +32,8 @@ export default class Information extends Component{
     _renderContent() {
 		const htmlContent = `
 			<div style="textAlign: justify; padding-left: 10px; padding-right: 10px; color: #333;">
-				<h1>Nama Event</h1>
-				<p>Penjelasan event</p>
+				<h1>Srifoton</h1>
+				<p>Lomba App Dev Himpunan Mahasiswa Teknik Informatika Universitas Sriwijaya</p>
 			</div>
 		`;
 
@@ -74,7 +74,8 @@ export default class Information extends Component{
 	    				</View>
 	    			</View>
 	    			<View style={{ width: '100%', paddingVertical: 20 }}>
-	    				<Button full dark>
+	    				<Button full dark
+						navigateTo={() => navigate('QrCodeScanner', { item })}>
 		    				<Text>Enter the Event</Text>
 		    			</Button>
 	    			</View>
